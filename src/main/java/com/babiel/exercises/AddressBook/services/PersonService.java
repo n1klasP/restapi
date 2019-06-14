@@ -1,6 +1,6 @@
-package AddressBook.services;
+package com.babiel.exercises.AddressBook.services;
 
-import AddressBook.model.PersonModel;
+import com.babiel.exercises.AddressBook.model.PersonModel;
 
 import java.util.List;
 

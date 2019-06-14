@@ -1,8 +1,8 @@
-package AddressBook.services.impl;
+package com.babiel.exercises.AddressBook.services.impl;
 
-import AddressBook.model.PersonModel;
-import AddressBook.persistence.DataSource;
-import AddressBook.services.PersonService;
+import com.babiel.exercises.AddressBook.model.PersonModel;
+import com.babiel.exercises.AddressBook.persistence.DataSource;
+import com.babiel.exercises.AddressBook.services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package AddressBook.model;
+package com.babiel.exercises.AddressBook.model;
 
 /**
  * Created by p.okraku on 31.05.2019.

@@ -10,7 +10,7 @@
 
 <body>
 
-<%-- <c:forEach> --%>
+<%-- <c:forEach> -------------------------------------------------------------------------------------------------- --%>
 <ul>
     <c:forEach items="${stringList}" var="item">
         <li>${item}</li>
@@ -19,7 +19,7 @@
 
 <br/>
 
-<%-- <c:choose> --%>
+<%-- <c:choose> ------------------------------------------------------------------------------------------------------%>
 <ul>
     <c:forEach items="${stringList}" var="item">
             <c:choose>
@@ -39,7 +39,7 @@
     </c:forEach>
 </ul>
 
-<%-- ${fn:length(), Fragezeichenoperator --%>
+<%-- ${fn:length() ------------------------------------------------------------------------------------------------ --%>
 <c:set var="listSize" value="${fn:length(stringList)}" />
 
 <p>Die Liste hat ${listSize} Elemente.</p>
@@ -51,10 +51,14 @@
     <p>Die Liste ist leer.</p>
 </c:if>
 
+<%-- Fragezeichenoperator ----------------------------------------------------------------------------------------- --%>
 <p>Die Anzahl der Elemente ist ${(listSize % 2 == 0) ? "gerade" : "ungerade"}.</p>
 
+<%-- <c:out> ------------------------------------------------------------------------------------------------------ --%>
 <c:out value="<script type=\"text/javascript\">alert(\"XSS\");</script>" />
+<%--<script type="text/javascript">alert("XSS");</script>--%>
 
-<script type="text/javascript">alert("XSS");</script>
+<%-- TODO ------------------------------------------------------------------------------------------------------ --%>
+
 </body>
 </html>

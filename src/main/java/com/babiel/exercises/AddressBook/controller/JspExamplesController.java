@@ -1,6 +1,6 @@
-package AddressBook.controller;
+package com.babiel.exercises.AddressBook.controller;
 
-import AddressBook.model.GreetingModel;
+import com.babiel.exercises.AddressBook.model.GreetingModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

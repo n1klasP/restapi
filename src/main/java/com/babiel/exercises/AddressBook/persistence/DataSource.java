@@ -1,6 +1,6 @@
-package AddressBook.persistence;
+package com.babiel.exercises.AddressBook.persistence;
 
-import AddressBook.model.PersonModel;
+import com.babiel.exercises.AddressBook.model.PersonModel;
 
 import java.util.List;
 

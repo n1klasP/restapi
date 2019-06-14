@@ -1,7 +1,7 @@
-package AddressBook.persistence.impl;
+package com.babiel.exercises.AddressBook.persistence.impl;
 
-import AddressBook.model.PersonModel;
-import AddressBook.persistence.DataSource;
+import com.babiel.exercises.AddressBook.model.PersonModel;
+import com.babiel.exercises.AddressBook.persistence.DataSource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
