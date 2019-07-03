@@ -18,8 +18,8 @@ public class DummyDataSource implements DataSource {
   @PostConstruct
   public void init() {
     persons = new ArrayList<>();
-    persons.add(new PersonModel("0", "Max", "Mustermann", "Musterstraße 1", 12345, "Musterstadt"));
-    persons.add(new PersonModel("1", "Marianne", "Musterfrau", "Musterstraße 3", 23456, "Musterstadt2"));
+    persons.add(new PersonModel(0, "Max", "Mustermann", "Musterstraße 1", 12345, "Musterstadt"));
+    persons.add(new PersonModel(1, "Marianne", "Musterfrau", "Musterstraße 3", 23456, "Musterstadt2"));
   }
 
   @Override
@@ -30,7 +30,7 @@ public class DummyDataSource implements DataSource {
   @Override
   public void update(PersonModel updatedPerson) {
     for(int i = 0; i < persons.size(); i++) {
-      if(persons.get(i).getId().equals(updatedPerson.getId())) {
+      if(persons.get(i).getId() == updatedPerson.getId()) {
         persons.set(i, updatedPerson);
         break;
       }

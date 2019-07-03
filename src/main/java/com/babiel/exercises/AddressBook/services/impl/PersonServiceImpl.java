@@ -14,15 +14,15 @@ import java.util.List;
 @Service
 public class PersonServiceImpl implements PersonService {
   @Autowired
-  private DataSource dataSource;
+  private DataSource addressBookDataSource;
 
   @Override
   public List<PersonModel> findAll() {
-    return dataSource.findAll();
+    return addressBookDataSource.findAll();
   }
 
   @Override
   public void update(PersonModel person) {
-    dataSource.update(person);
+    addressBookDataSource.update(person);
   }
 }

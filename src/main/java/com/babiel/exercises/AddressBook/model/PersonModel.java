@@ -4,7 +4,7 @@ package com.babiel.exercises.AddressBook.model;
  * Created by p.okraku on 31.05.2019.
  */
 public class PersonModel {
-  private String id;
+  private long id;
   private String firstName;
   private String lastName;
   private String street;
@@ -14,7 +14,7 @@ public class PersonModel {
   public PersonModel() {
   }
 
-  public PersonModel(String id, String firstName, String lastName, String street, int zipCode, String city) {
+  public PersonModel(long id, String firstName, String lastName, String street, int zipCode, String city) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -23,11 +23,11 @@ public class PersonModel {
     this.city = city;
   }
 
-  public String getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(long id) {
     this.id = id;
   }
 
