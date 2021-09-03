@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/PersonsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/person.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/person.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/person.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +44,13 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.SpringBootWebApplication">
+    <configuration name="generated-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="SpringBootWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="AddressBook" />
       <extension name="coverage">
@@ -56,6 +67,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.SpringBootWebApplication" />
+        <item itemvalue="HTTP Request.generated-requests#2" />
       </list>
     </recent_temporary>
   </component>
@@ -67,7 +79,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630584428366</updated>
-      <workItem from="1630584434961" duration="3004000" />
+      <workItem from="1630584434961" duration="8311000" />
+      <workItem from="1630656132360" duration="2391000" />
     </task>
     <servers />
   </component>
