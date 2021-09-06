@@ -1,0 +1,348 @@
+Index: src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.controller;\r\n\r\nimport com.babiel.exercises.AddressBook.model.PersonModel;\r\nimport com.babiel.exercises.AddressBook.services.PersonService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.ui.ModelMap;\r\nimport org.springframework.web.bind.annotation.PathVariable;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\nimport org.springframework.web.bind.annotation.RequestParam;\r\n\r\n\r\n@Controller\r\npublic class DetailController {\r\n    public Integer userID;\r\n\r\n    @Autowired\r\n    private PersonService personService;\r\n\r\n\r\n    @RequestMapping(\"/person/{id}\")\r\n    public String person(Model model, @PathVariable(\"id\") Integer userID) {\r\n        this.userID = userID;\r\n        System.out.println(\"ID is \" + userID);\r\n        model.addAttribute(\"person\", personService.findAll().get(userID));\r\n        return \"detail\";\r\n    }\r\n\r\n    @PostMapping(\"/\")\r\n    public String saveDetails(@RequestParam(\"text_firstName\") String firstName,\r\n                              @RequestParam(\"text_lastName\") String lastName,\r\n                              @RequestParam(\"text_street\") String street,\r\n                              @RequestParam(\"text_zipCode\") Integer zipCode,\r\n                              @RequestParam(\"text_city\") String city,\r\n                              ModelMap modelMap) {\r\n        PersonModel updatePerson = new PersonModel();\r\n        updatePerson.setId(this.userID);\r\n        updatePerson.setFirstName(firstName);\r\n        updatePerson.setLastName(lastName);\r\n        updatePerson.setStreet(street);\r\n        updatePerson.setZipCode(zipCode);\r\n        updatePerson.setCity(city);\r\n        System.out.println(firstName);\r\n        personService.update(updatePerson);\r\n        return \"person\";\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
+@@ -6,36 +6,49 @@
+ import org.springframework.stereotype.Controller;
+ import org.springframework.ui.Model;
+ import org.springframework.ui.ModelMap;
++import org.springframework.validation.BindingResult;
++import org.springframework.validation.FieldError;
+ import org.springframework.web.bind.annotation.PathVariable;
+-import org.springframework.web.bind.annotation.PostMapping;
+ import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RequestMethod;
+ import org.springframework.web.bind.annotation.RequestParam;
++import org.springframework.web.bind.support.SessionStatus;
++import org.springframework.web.servlet.ModelAndView;
++
++import javax.validation.ConstraintViolation;
++import javax.validation.Valid;
++import javax.validation.Validator;
++import java.util.Set;
+ 
+ 
+ @Controller
+ public class DetailController {
+     public Integer userID;
+ 
++
+     @Autowired
+     private PersonService personService;
++    private Validator validator;
+ 
+ 
+-    @RequestMapping("/person/{id}")
+-    public String person(Model model, @PathVariable("id") Integer userID) {
+-        this.userID = userID;
+-        System.out.println("ID is " + userID);
+-        model.addAttribute("person", personService.findAll().get(userID));
+-        return "detail";
+-    }
+-
+-    @PostMapping("/")
+-    public String saveDetails(@RequestParam("text_firstName") String firstName,
++    @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
++    public ModelAndView person(Model model, @PathVariable int id) {
++            userID = id;
++            model.addAttribute("editPerson", personService.findAll().get(userID));
++            
++    }
++/*
++    @RequestMapping(value =  "detail", method = RequestMethod.POST)
++    public String saveDetails(@Valid PersonModel updatePerson, BindingResult bindingResult, SessionStatus sessionStatus,
++                              @RequestParam("text_firstName") String firstName,
+                               @RequestParam("text_lastName") String lastName,
+                               @RequestParam("text_street") String street,
+                               @RequestParam("text_zipCode") Integer zipCode,
+                               @RequestParam("text_city") String city,
+                               ModelMap modelMap) {
+-        PersonModel updatePerson = new PersonModel();
++
++
++
+         updatePerson.setId(this.userID);
+         updatePerson.setFirstName(firstName);
+         updatePerson.setLastName(lastName);
+@@ -43,8 +56,28 @@
+         updatePerson.setZipCode(zipCode);
+         updatePerson.setCity(city);
+         System.out.println(firstName);
+-        personService.update(updatePerson);
++
++
++
++        Set<ConstraintViolation<PersonModel>> violations = validator.validate(updatePerson);
++
++
++        for(ConstraintViolation<PersonModel> violation : violations)
++        {
++            String propertyPath = violation.getPropertyPath().toString();
++            String message = violation.getMessage();
++
++            bindingResult.addError(new FieldError("updatePerson", propertyPath, "Invalid"+propertyPath + "("+message + ")"));
++        }
++        if(bindingResult.hasErrors())
++        {
++            return "detail";
++        }
++
++        sessionStatus.setComplete();
+         return "person";
+     }
++
++ */
+ }
+ 
+Index: src/main/webapp/WEB-INF/jsp/detail.jsp
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\" %>\r\n<%@ page contentType=\"text/html;charset=UTF-8\" language=\"java\" %>\r\n<!DOCTYPE html>\r\n<html lang=\"de\">\r\n<head>\r\n</head>\r\n<body>\r\n<form form method=\"post\" action=\"/\">\r\n    <div class=\"form-group\">\r\n        <label>Vorname:</label> <input type=\"text\" class=\"form-control\" name=\"text_firstName\" value=\"${person.firstName}\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label>Nachname:</label> <input type=\"text\" class=\"form-control\" name=\"text_lastName\" value=\"${person.lastName}\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label>Straße:</label> <input type=\"text\" class=\"form-control\" name=\"text_street\" value=\"${person.street}\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label>Postleitzahl:</label> <input type=\"text\" class=\"form-control\" name=\"text_zipCode\" value=\"${person.zipCode}\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label>Stadt:</label> <input type=\"text\" class=\"form-control\" name=\"text_city\" value=\"${person.city}\">\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <input type=\"submit\" class=\"btn btn-primary\" name=\"button_save\" value=\"Speichern\">\r\n    </div>\r\n</form>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/webapp/WEB-INF/jsp/detail.jsp b/src/main/webapp/WEB-INF/jsp/detail.jsp
+--- a/src/main/webapp/WEB-INF/jsp/detail.jsp	
++++ b/src/main/webapp/WEB-INF/jsp/detail.jsp	
+@@ -1,34 +1,59 @@
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
++<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+ <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ <!DOCTYPE html>
+ <html lang="de">
+ <head>
+ </head>
+ <body>
+-<form form method="post" action="/">
+-    <div class="form-group">
+-        <label>Vorname:</label> <input type="text" class="form-control" name="text_firstName" value="${person.firstName}">
+-    </div>
+-
+-    <div class="form-group">
+-        <label>Nachname:</label> <input type="text" class="form-control" name="text_lastName" value="${person.lastName}">
+-    </div>
+-
+-    <div class="form-group">
+-        <label>Straße:</label> <input type="text" class="form-control" name="text_street" value="${person.street}">
+-    </div>
+-
+-    <div class="form-group">
+-        <label>Postleitzahl:</label> <input type="text" class="form-control" name="text_zipCode" value="${person.zipCode}">
+-    </div>
+-
+-    <div class="form-group">
+-        <label>Stadt:</label> <input type="text" class="form-control" name="text_city" value="${person.city}">
+-    </div>
+-
+-    <div class="form-group">
+-        <input type="submit" class="btn btn-primary" name="button_save" value="Speichern">
+-    </div>
+-</form>
++<form:form method="post">
++    <table>
++        <tr>
++            <td>
++                <form:label path = "firstName">Firstname:</form:label>
++            </td>
++            <td>
++                <form:input path = "firstName"/>
++            </td>
++        </tr>
++        <tr>
++            <td>
++                <form:label path = "lastName">Lastname:</form:label>
++            </td>
++            <td>
++                <form:input path = "lastName"/>
++            </td>
++        </tr>
++        <tr>
++            <td>
++                <form:label path = "street">Street:</form:label>
++            </td>
++            <td>
++                <form:input path = "street"/>
++            </td>
++        </tr>
++        <tr>
++            <td>
++                <form:label path = "zipCode">ZipCode:</form:label>
++            </td>
++            <td>
++                <form:input path = "zipCode"/>
++            </td>
++        </tr>
++        <tr>
++            <td>
++                <form:label path = "city">City:</form:label>
++            </td>
++            <td>
++                <form:input path = "city"/>
++            </td>
++        </tr>
++        <tr>
++            <td colspan = "2">
++                <input type = "submit" value = "Submit"/>
++            </td>
++        </tr>
++    </table>
++</form:form>
+ </body>
+ </html>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xaDhUEkHn4q35p2qEPO66rJsZg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.SpringBootWebApplication\">\r\n    <configuration name=\"generated-requests#2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http\" index=\"2\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"SpringBootWebApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"AddressBook\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.babiel.exercises.AddressBook.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.babiel.exercises.AddressBook.SpringBootWebApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.SpringBootWebApplication\" />\r\n        <item itemvalue=\"HTTP Request.generated-requests#2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\" />\r\n      <created>1630584428366</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1630584428366</updated>\r\n      <workItem from=\"1630584434961\" duration=\"8311000\" />\r\n      <workItem from=\"1630656132360\" duration=\"6745000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,10 +5,17 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBook.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,8 +30,21 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="AZUBI-513" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
++  <component name="GitSEFilterConfiguration">
++    <file-type-list>
++      <filtered-out-file-type name="LOCAL_BRANCH" />
++      <filtered-out-file-type name="REMOTE_BRANCH" />
++      <filtered-out-file-type name="TAG" />
++      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
++    </file-type-list>
++  </component>
+   <component name="ProjectId" id="1xaDhUEkHn4q35p2qEPO66rJsZg" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+@@ -75,10 +95,28 @@
+       <updated>1630584428366</updated>
+       <workItem from="1630584434961" duration="8311000" />
+       <workItem from="1630656132360" duration="6745000" />
++      <workItem from="1630910707803" duration="2727000" />
++      <workItem from="1630913919589" duration="3859000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <breakpoint enabled="true" type="java-exception">
++          <properties class="java.lang.NullPointerException" package="java.lang" />
++          <option name="timeStamp" value="17" />
++        </breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++    <pin-to-top-manager>
++      <pinned-members>
++        <PinnedItemInfo parentTag="com.babiel.exercises.AddressBook.services.impl.PersonServiceImpl" memberName="addressBookDataSource" />
++        <PinnedItemInfo parentTag="org.springframework.validation.FieldError" memberName="field" />
++      </pinned-members>
++    </pin-to-top-manager>
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml b/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_1_3_Final.xml	
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: org.hibernate:hibernate-validator:5.1.3.Final">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>AddressBook</groupId>\r\n    <artifactId>AddressBook</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n    <name>AddressBook</name>\r\n\r\n    <parent>\r\n        <groupId>org.springframework.boot</groupId>\r\n        <artifactId>spring-boot-starter-parent</artifactId>\r\n        <version>2.1.4.RELEASE</version>\r\n    </parent>\r\n\r\n    <properties>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n        <maven.compiler.source>1.8</maven.compiler.source>\r\n        <maven.compiler.target>1.8</maven.compiler.target>\r\n    </properties>\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>junit</groupId>\r\n            <artifactId>junit</artifactId>\r\n            <version>4.11</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-web</artifactId>\r\n        </dependency>\r\n\r\n        <!-- Tomcat embedded container-->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-starter-tomcat</artifactId>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n\r\n        <!-- JSTL for JSP -->\r\n        <dependency>\r\n            <groupId>javax.servlet</groupId>\r\n            <artifactId>jstl</artifactId>\r\n        </dependency>\r\n\r\n        <!-- Need this to compile JSP -->\r\n        <dependency>\r\n            <groupId>org.apache.tomcat.embed</groupId>\r\n            <artifactId>tomcat-embed-jasper</artifactId>\r\n            <scope>provided</scope>\r\n        </dependency>\r\n\r\n        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools -->\r\n        <dependency>\r\n            <groupId>org.springframework.boot</groupId>\r\n            <artifactId>spring-boot-devtools</artifactId>\r\n            <version>2.1.5.RELEASE</version>\r\n        </dependency>\r\n\r\n    </dependencies>\r\n\r\n    <build>\r\n        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->\r\n            <plugins>\r\n                <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-clean-plugin</artifactId>\r\n                    <version>3.1.0</version>\r\n                </plugin>\r\n                <!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->\r\n                <plugin>\r\n                    <artifactId>maven-resources-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-compiler-plugin</artifactId>\r\n                    <version>3.8.0</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-surefire-plugin</artifactId>\r\n                    <version>2.22.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-jar-plugin</artifactId>\r\n                    <version>3.0.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-install-plugin</artifactId>\r\n                    <version>2.5.2</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-deploy-plugin</artifactId>\r\n                    <version>2.8.2</version>\r\n                </plugin>\r\n                <!-- site lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#site_Lifecycle -->\r\n                <plugin>\r\n                    <artifactId>maven-site-plugin</artifactId>\r\n                    <version>3.7.1</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <artifactId>maven-project-info-reports-plugin</artifactId>\r\n                    <version>3.0.0</version>\r\n                </plugin>\r\n                <plugin>\r\n                    <groupId>org.springframework.boot</groupId>\r\n                    <artifactId>spring-boot-maven-plugin</artifactId>\r\n                    <configuration>\r\n                        <jvmArguments>\r\n                            -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005\r\n                        </jvmArguments>\r\n                    </configuration>\r\n                </plugin>\r\n            </plugins>\r\n        </pluginManagement>\r\n    </build>\r\n</project>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	
++++ b/pom.xml	
+@@ -62,6 +62,18 @@
+             <version>2.1.5.RELEASE</version>
+         </dependency>
+ 
++        <dependency>
++            <groupId>org.hibernate</groupId>
++            <artifactId>hibernate-validator</artifactId>
++            <version>5.1.3.Final</version>
++        </dependency>
++        <dependency>
++            <groupId>org.jetbrains</groupId>
++            <artifactId>annotations</artifactId>
++            <version>RELEASE</version>
++            <scope>compile</scope>
++        </dependency>
++
+     </dependencies>
+ 
+     <build>
+Index: .idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml
+===================================================================
+diff --git a/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml b/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml	
+@@ -0,0 +1,13 @@
++<component name="libraryTable">
++  <library name="Maven: javax.validation:validation-api:1.0.0.GA">
++    <CLASSES>
++      <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA.jar!/" />
++    </CLASSES>
++    <JAVADOC>
++      <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-javadoc.jar!/" />
++    </JAVADOC>
++    <SOURCES>
++      <root url="jar://$MAVEN_REPOSITORY$/javax/validation/validation-api/1.0.0.GA/validation-api-1.0.0.GA-sources.jar!/" />
++    </SOURCES>
++  </library>
++</component>
+\ No newline at end of file

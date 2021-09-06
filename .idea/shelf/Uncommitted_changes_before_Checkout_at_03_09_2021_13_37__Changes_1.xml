@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1" date="1630669072740" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 03.09.2021 13:37 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/DetailController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" />
+    <option name="AFTER_PATH" value="target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/PersonModel.class" />
+  </binary>
+</changelist>

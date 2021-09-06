@@ -1,0 +1,193 @@
+Index: AddressBook.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"web\" name=\"Web\">\r\n      <configuration>\r\n        <webroots />\r\n      </configuration>\r\n    </facet>\r\n    <facet type=\"Spring\" name=\"Spring\">\r\n      <configuration />\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_8\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: junit:junit:4.11\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.hamcrest:hamcrest-core:1.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-web:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-logging:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-classic:1.2.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-core:1.2.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:slf4j-api:1.7.26\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-to-slf4j:2.11.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-api:2.11.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:jul-to-slf4j:1.7.26\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-core:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-jcl:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: org.yaml:snakeyaml:1.23\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-json:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-core:2.9.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.9.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.hibernate.validator:hibernate-validator:6.0.16.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: javax.validation:validation-api:2.0.1.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.jboss.logging:jboss-logging:3.3.2.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml:classmate:1.4.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-web:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-beans:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-webmvc:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-aop:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-context:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-expression:5.1.6.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.springframework.boot:spring-boot-starter-tomcat:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: javax.annotation:javax.annotation-api:1.3.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.17\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.17\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.17\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: javax.servlet:jstl:1.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-jasper:9.0.17\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"PROVIDED\" name=\"Maven: org.eclipse.jdt:ecj:3.15.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-devtools:2.1.5.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot:2.1.4.RELEASE\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.4.RELEASE\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/AddressBook.iml b/AddressBook.iml
+--- a/AddressBook.iml	
++++ b/AddressBook.iml	
+@@ -42,9 +42,6 @@
+     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.9.8" level="project" />
+     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.9.8" level="project" />
+     <orderEntry type="library" name="Maven: org.hibernate.validator:hibernate-validator:6.0.16.Final" level="project" />
+-    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
+-    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
+-    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.4.0" level="project" />
+     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.1.6.RELEASE" level="project" />
+     <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.1.6.RELEASE" level="project" />
+     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.1.6.RELEASE" level="project" />
+@@ -62,5 +59,10 @@
+     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-devtools:2.1.5.RELEASE" level="project" />
+     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.4.RELEASE" level="project" />
+     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.4.RELEASE" level="project" />
++    <orderEntry type="library" name="Maven: org.hibernate:hibernate-validator:5.1.3.Final" level="project" />
++    <orderEntry type="library" name="Maven: javax.validation:validation-api:2.0.1.Final" level="project" />
++    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" level="project" />
++    <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.4.0" level="project" />
++    <orderEntry type="library" name="Maven: org.jetbrains:annotations:22.0.0" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.model;\r\n\r\n/**\r\n * Created by p.okraku on 03.06.2019.\r\n */\r\npublic class GreetingModel {\r\n  private String firstName;\r\n  private String lastName;\r\n\r\n  public GreetingModel() {\r\n  }\r\n\r\n  public GreetingModel(String firstName, String lastName) {\r\n    this.firstName = firstName;\r\n    this.lastName = lastName;\r\n  }\r\n\r\n  public String getFirstName() {\r\n    return firstName;\r\n  }\r\n\r\n  public void setFirstName(String firstName) {\r\n    this.firstName = firstName;\r\n  }\r\n\r\n  public String getLastName() {\r\n    return lastName;\r\n  }\r\n\r\n  public void setLastName(String lastName) {\r\n    this.lastName = lastName;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java b/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java	
+@@ -30,4 +30,4 @@
+   public void setLastName(String lastName) {
+     this.lastName = lastName;
+   }
+-}
++}
+\ No newline at end of file
+Index: src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.model;\r\n\r\n/**\r\n * Created by p.okraku on 31.05.2019.\r\n */\r\npublic class PersonModel {\r\n  private long id;\r\n  private String firstName;\r\n  private String lastName;\r\n  private String street;\r\n  private int zipCode;\r\n  private String city;\r\n\r\n  public PersonModel() {\r\n  }\r\n\r\n  public PersonModel(long id, String firstName, String lastName, String street, int zipCode, String city) {\r\n    this.id = id;\r\n    this.firstName = firstName;\r\n    this.lastName = lastName;\r\n    this.street = street;\r\n    this.zipCode = zipCode;\r\n    this.city = city;\r\n  }\r\n\r\n  public long getId() {\r\n    return id;\r\n  }\r\n\r\n  public void setId(long id) {\r\n    this.id = id;\r\n  }\r\n\r\n  public String getFirstName() {\r\n    return firstName;\r\n  }\r\n\r\n  public void setFirstName(String firstName) {\r\n    this.firstName = firstName;\r\n  }\r\n\r\n  public String getLastName() {\r\n    return lastName;\r\n  }\r\n\r\n  public void setLastName(String lastName) {\r\n    this.lastName = lastName;\r\n  }\r\n\r\n  public String getStreet() {\r\n    return street;\r\n  }\r\n\r\n  public void setStreet(String street) {\r\n    this.street = street;\r\n  }\r\n\r\n  public int getZipCode() {\r\n    return zipCode;\r\n  }\r\n\r\n  public void setZipCode(int zipCode) {\r\n    this.zipCode = zipCode;\r\n  }\r\n\r\n  public String getCity() {\r\n    return city;\r\n  }\r\n\r\n  public void setCity(String city) {\r\n    this.city = city;\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java b/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java	
+@@ -1,73 +1,81 @@
+ package com.babiel.exercises.AddressBook.model;
+ 
++import javax.validation.constraints.NotBlank;
++import javax.validation.constraints.NotEmpty;
++import javax.validation.constraints.NotNull;
++import javax.validation.constraints.Size;
++
+ /**
+  * Created by p.okraku on 31.05.2019.
+  */
+ public class PersonModel {
+-  private long id;
+-  private String firstName;
+-  private String lastName;
+-  private String street;
+-  private int zipCode;
+-  private String city;
++    private long id;
++
++    private String firstName;
++
++
++    private String lastName;
++    private String street;
++    private int zipCode;
++    private String city;
+ 
+-  public PersonModel() {
+-  }
++    public PersonModel() {
++    }
+ 
+-  public PersonModel(long id, String firstName, String lastName, String street, int zipCode, String city) {
+-    this.id = id;
+-    this.firstName = firstName;
+-    this.lastName = lastName;
+-    this.street = street;
+-    this.zipCode = zipCode;
+-    this.city = city;
+-  }
++    public PersonModel(long id, String firstName, String lastName, String street, int zipCode, String city) {
++        this.id = id;
++        this.firstName = firstName;
++        this.lastName = lastName;
++        this.street = street;
++        this.zipCode = zipCode;
++        this.city = city;
++    }
+ 
+-  public long getId() {
+-    return id;
+-  }
++    public long getId() {
++        return id;
++    }
+ 
+-  public void setId(long id) {
+-    this.id = id;
+-  }
++    public void setId(long id) {
++        this.id = id;
++    }
+ 
+-  public String getFirstName() {
+-    return firstName;
+-  }
++    public String getFirstName() {
++        return firstName;
++    }
+ 
+-  public void setFirstName(String firstName) {
+-    this.firstName = firstName;
+-  }
++    public void setFirstName(String firstName) {
++        this.firstName = firstName;
++    }
+ 
+-  public String getLastName() {
+-    return lastName;
+-  }
++    public String getLastName() {
++        return lastName;
++    }
+ 
+-  public void setLastName(String lastName) {
+-    this.lastName = lastName;
+-  }
++    public void setLastName(String lastName) {
++        this.lastName = lastName;
++    }
+ 
+-  public String getStreet() {
+-    return street;
+-  }
++    public String getStreet() {
++        return street;
++    }
+ 
+-  public void setStreet(String street) {
+-    this.street = street;
+-  }
++    public void setStreet(String street) {
++        this.street = street;
++    }
+ 
+-  public int getZipCode() {
+-    return zipCode;
+-  }
++    public int getZipCode() {
++        return zipCode;
++    }
+ 
+-  public void setZipCode(int zipCode) {
+-    this.zipCode = zipCode;
+-  }
++    public void setZipCode(int zipCode) {
++        this.zipCode = zipCode;
++    }
+ 
+-  public String getCity() {
+-    return city;
+-  }
++    public String getCity() {
++        return city;
++    }
+ 
+-  public void setCity(String city) {
+-    this.city = city;
+-  }
++    public void setCity(String city) {
++        this.city = city;
++    }
+ }

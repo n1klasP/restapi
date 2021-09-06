@@ -1,34 +1,36 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="de">
 <head>
 </head>
 <body>
-<form>
+<form:form modelAttribute="person" method="post">
     <div class="form-group">
-        <label>Vorname:</label> <input type="text" class="form-control" name="text_firstName" value="${person.firstName}">
+        <label>Vorname:</label> <form:input path="firstName" />
+        <form:errors path="firstName" class="error"/>
     </div>
 
     <div class="form-group">
-        <label>Nachname:</label> <input type="text" class="form-control" name="text_lastName" value="${person.lastName}">
+        <label>Nachname:</label> <form:input path="lastName" />
     </div>
 
     <div class="form-group">
-        <label>Straße:</label> <input type="text" class="form-control" name="text_street" value="${person.street}">
+        <label>Straße:</label> <form:input path="street" />
     </div>
 
     <div class="form-group">
-        <label>Postleitzahl:</label> <input type="text" class="form-control" name="text_zipCode" value="${person.zipCode}">
+        <label>Postleitzahl:</label> <form:input path="zipCode" />
     </div>
 
     <div class="form-group">
-        <label>Stadt:</label> <input type="text" class="form-control" name="text_city" value="${person.city}">
+        <label>Stadt:</label> <form:input path="city" />
     </div>
 
     <div class="form-group">
         <input type="submit" class="btn btn-primary" name="button_save" value="Speichern">
     </div>
-</form>
+</form:form>
 </body>
 </html>

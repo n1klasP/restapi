@@ -1,15 +1,32 @@
 package com.babiel.exercises.AddressBook.model;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 /**
  * Created by p.okraku on 31.05.2019.
  */
 public class PersonModel {
+
+
   private long id;
+
+  @NotEmpty(message = "leer")
   private String firstName;
+
+  @NotEmpty(message = "leer")
   private String lastName;
+
+  @NotEmpty(message = "leer")
   private String street;
+
+  @Min(value = 1, message = "leer")
   private int zipCode;
+
+  @NotEmpty(message = "leer")
   private String city;
+
 
   public PersonModel() {
   }

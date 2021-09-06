@@ -1,0 +1,76 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xaDhUEkHn4q35p2qEPO66rJsZg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.SpringBootWebApplication\">\r\n    <configuration name=\"generated-requests#2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http\" index=\"2\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"SpringBootWebApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"AddressBook\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.babiel.exercises.AddressBook.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.babiel.exercises.AddressBook.SpringBootWebApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.SpringBootWebApplication\" />\r\n        <item itemvalue=\"HTTP Request.generated-requests#2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\" />\r\n      <created>1630584428366</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1630584428366</updated>\r\n      <workItem from=\"1630584434961\" duration=\"8311000\" />\r\n      <workItem from=\"1630656132360\" duration=\"6745000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,10 +5,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_4_3_1_Final.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_2_0_1_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_0_0_GA.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBook.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -60,6 +65,8 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Spring Boot.SpringBootWebApplication" />
++        <item itemvalue="HTTP Request.generated-requests#2" />
+         <item itemvalue="Spring Boot.SpringBootWebApplication" />
+         <item itemvalue="HTTP Request.generated-requests#2" />
+       </list>
+@@ -74,7 +81,8 @@
+       <option name="presentableId" value="Default" />
+       <updated>1630584428366</updated>
+       <workItem from="1630584434961" duration="8311000" />
+-      <workItem from="1630656132360" duration="6745000" />
++      <workItem from="1630656132360" duration="9437000" />
++      <workItem from="1630667769318" duration="1097000" />
+     </task>
+     <servers />
+   </component>
+Index: src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.controller;\r\n\r\nimport com.babiel.exercises.AddressBook.model.PersonModel;\r\nimport com.babiel.exercises.AddressBook.services.PersonService;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.ui.ModelMap;\r\nimport org.springframework.web.bind.annotation.PathVariable;\r\nimport org.springframework.web.bind.annotation.PostMapping;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\nimport org.springframework.web.bind.annotation.RequestParam;\r\n\r\n\r\n@Controller\r\npublic class DetailController {\r\n    public Integer userID;\r\n\r\n    @Autowired\r\n    private PersonService personService;\r\n\r\n\r\n    @RequestMapping(\"/person/{id}\")\r\n    public String person(Model model, @PathVariable(\"id\") Integer userID) {\r\n        this.userID = userID;\r\n        System.out.println(\"ID is \" + userID);\r\n        model.addAttribute(\"person\", personService.findAll().get(userID));\r\n        return \"detail\";\r\n    }\r\n\r\n    @PostMapping(\"/\")\r\n    public String saveDetails(@RequestParam(\"text_firstName\") String firstName,\r\n                              @RequestParam(\"text_lastName\") String lastName,\r\n                              @RequestParam(\"text_street\") String street,\r\n                              @RequestParam(\"text_zipCode\") Integer zipCode,\r\n                              @RequestParam(\"text_city\") String city,\r\n                              ModelMap modelMap) {\r\n        PersonModel updatePerson = new PersonModel();\r\n        updatePerson.setId(this.userID);\r\n        updatePerson.setFirstName(firstName);\r\n        updatePerson.setLastName(lastName);\r\n        updatePerson.setStreet(street);\r\n        updatePerson.setZipCode(zipCode);\r\n        updatePerson.setCity(city);\r\n        System.out.println(firstName);\r\n        personService.update(updatePerson);\r\n        return \"person\";\r\n    }\r\n}\r\n\r\n
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
+@@ -11,10 +11,13 @@
+ import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.RequestParam;
+ 
++import javax.xml.validation.Validator;
++
+ 
+ @Controller
+ public class DetailController {
+     public Integer userID;
++    private Validator validator;
+ 
+     @Autowired
+     private PersonService personService;
+@@ -35,6 +38,7 @@
+                               @RequestParam("text_zipCode") Integer zipCode,
+                               @RequestParam("text_city") String city,
+                               ModelMap modelMap) {
++        System.out.println(modelMap);
+         PersonModel updatePerson = new PersonModel();
+         updatePerson.setId(this.userID);
+         updatePerson.setFirstName(firstName);
