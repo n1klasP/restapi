@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/n_pooschke.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/Firstname.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_16_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/labels.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBook.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/greeting.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/greeting.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/firstNameConstraintValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/firstNameConstraintValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

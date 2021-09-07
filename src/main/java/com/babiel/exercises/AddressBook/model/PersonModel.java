@@ -14,7 +14,7 @@ public class PersonModel {
 
   private long id;
 
-  @Firstname
+  @Firstname(message = "{test}")
   private String firstName;
 
   @NotEmpty(message = "leer")
