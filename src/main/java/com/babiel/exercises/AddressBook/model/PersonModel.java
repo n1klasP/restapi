@@ -1,5 +1,7 @@
 package com.babiel.exercises.AddressBook.model;
 
+import com.babiel.exercises.AddressBook.controller.Firstname;
+
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -12,7 +14,7 @@ public class PersonModel {
 
   private long id;
 
-  @NotEmpty(message = "leer")
+  @Firstname
   private String firstName;
 
   @NotEmpty(message = "leer")

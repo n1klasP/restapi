@@ -9,7 +9,7 @@
 <form:form modelAttribute="person" method="post">
     <div class="form-group">
         <label>Vorname:</label> <form:input path="firstName" />
-        <form:errors path="firstName" class="error"/>
+        <form:errors path="firstName" cssClass="error"/>
     </div>
 
     <div class="form-group">

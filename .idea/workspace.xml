@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/n_pooschke.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/Firstname.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_16_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_10_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBook.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/PersonsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/PersonsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/person.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/persons.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/PersonsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/PersonsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/model/PersonModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +29,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -30,22 +37,18 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AZUBI-515" />
+        <entry key="$PROJECT_DIR$" value="AZUBI-516" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/persons.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/PersonService.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/PersonsController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/impl/PersonServiceImpl.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/DataSource.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.java" root0="FORCE_HIGHLIGHTING" />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1xaDhUEkHn4q35p2qEPO66rJsZg" />
   <component name="ProjectViewState">
@@ -62,6 +65,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.babiel.exercises.AddressBook.controller" />
+    </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SpringBootWebApplication">
     <configuration name="generated-requests#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" runType="Run single request">
@@ -96,7 +104,7 @@
       <option name="presentableId" value="Default" />
       <updated>1630584428366</updated>
       <workItem from="1630584434961" duration="8311000" />
-      <workItem from="1630656132360" duration="2391000" />
+      <workItem from="1630656132360" duration="6745000" />
     </task>
     <servers />
   </component>
@@ -104,20 +112,14 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/detail.jsp</url>
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
-        <PinnedItemInfo parentTag="com.babiel.exercises.AddressBook.services.impl.PersonServiceImpl" memberName="addressBookDataSource" />
-        <PinnedItemInfo parentTag="org.springframework.validation.FieldError" memberName="field" />
-        <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="target" />
+        <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="errors" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

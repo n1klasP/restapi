@@ -2,23 +2,17 @@ package com.babiel.exercises.AddressBook.controller;
 
 import com.babiel.exercises.AddressBook.model.PersonModel;
 import com.babiel.exercises.AddressBook.services.PersonService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
 import javax.validation.Validator;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.locks.StampedLock;
 
 
 @Controller
@@ -28,6 +22,8 @@ public class DetailController {
     private PersonService personService;
     private Integer userID;
     private Validator validator;
+    private static final Logger logger = LoggerFactory.getLogger(DetailController.class);
+
 
 
 
@@ -56,7 +52,7 @@ public class DetailController {
 
         sessionStatus.setComplete();
         personService.update(person);
-        return "redi";
+        return "redirect:/";
     }
 
 
