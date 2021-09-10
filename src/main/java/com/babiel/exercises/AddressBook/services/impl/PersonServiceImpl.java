@@ -13,16 +13,16 @@ import java.util.List;
  */
 @Service
 public class PersonServiceImpl implements PersonService {
-  @Autowired
-  private DataSource addressBookDataSource;
+    @Autowired
+    private DataSource addressBookDataSource;
 
-  @Override
-  public List<PersonModel> findAll() {
-    return addressBookDataSource.findAll();
-  }
+    @Override
+    public List<PersonModel> findAll() {
+        return addressBookDataSource.findAll();
+    }
 
-  @Override
-  public void update(PersonModel person) {
-    addressBookDataSource.update(person);
-  }
+    @Override
+    public void update(PersonModel person) {
+        addressBookDataSource.update(person);
+    }
 }

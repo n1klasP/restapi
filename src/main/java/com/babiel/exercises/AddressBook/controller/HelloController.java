@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HelloController {
-  @RequestMapping("/hello")
-  public String greeting(Model model) {
-    GreetingModel greeting = new GreetingModel("Max", "Mustermann");
-    model.addAttribute("greeting", greeting);
-    return "greeting";
-  }
+    @RequestMapping("/hello")
+    public String greeting(Model model) {
+        GreetingModel greeting = new GreetingModel("Max", "Mustermann");
+        model.addAttribute("greeting", greeting);
+        return "greeting";
+    }
 }

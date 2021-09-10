@@ -2,6 +2,8 @@ package com.babiel.exercises.AddressBook.persistence.impl;
 
 import com.babiel.exercises.AddressBook.model.PersonModel;
 import com.babiel.exercises.AddressBook.persistence.DataSource;
+import com.babiel.exercises.AddressBook.repository.PersonModelJpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -12,14 +14,19 @@ import java.util.List;
  * Created by p.okraku on 31.05.2019.
  */
 @Service
-public class DummyDataSource implements DataSource {
+public class jpaDataSource implements DataSource {
     List<PersonModel> persons;
+    @Autowired
+    private PersonModelJpaRepository pmj;
 
     @PostConstruct
     public void init() {
         persons = new ArrayList<>();
-        persons.add(new PersonModel(0, "Max", "Mustermann", "Musterstraße 1", 12345, "Musterstadt"));
-        persons.add(new PersonModel(1, "Marianne", "Musterfrau", "Musterstraße 3", 23456, "Musterstadt2"));
+        List<PersonModel> test = pmj.findAll();
+        for (PersonModel p : test) {
+            persons.add(p);
+            System.out.println(p + "sss");
+        }
     }
 
     @Override
@@ -32,8 +39,10 @@ public class DummyDataSource implements DataSource {
         for (int i = 0; i < persons.size(); i++) {
             if (persons.get(i).getId() == updatedPerson.getId()) {
                 persons.set(i, updatedPerson);
+                pmj.save(updatedPerson);
                 break;
             }
         }
     }
 }
+
