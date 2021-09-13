@@ -22,10 +22,9 @@ public class jpaDataSource implements DataSource {
     @PostConstruct
     public void init() {
         persons = new ArrayList<>();
-        List<PersonModel> test = pmj.findAll();
-        for (PersonModel p : test) {
-            persons.add(p);
-            System.out.println(p + "sss");
+        List<PersonModel> personList = pmj.findAll();
+        for (PersonModel pm : personList) {
+            persons.add(pm);
         }
     }
 

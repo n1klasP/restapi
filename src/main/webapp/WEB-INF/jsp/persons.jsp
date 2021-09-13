@@ -56,11 +56,11 @@
     <tbody>
     <c:forEach items="${person}" var="person">
         <tr>
-            <td>${person.firstName}</td>
-            <td>${person.lastName}</td>
-            <td>${person.street}</td>
-            <td>${person.zipCode}</td>
-            <td>${person.city}</td>
+            <td><c:out value="${person.firstName}"> </c:out></td>
+            <td><c:out value="${person.lastName}"> </c:out></td>
+            <td><c:out value="${person.street}"> </c:out></td>
+            <td><c:out value="${person.zipCode}"> </c:out></td>
+            <td><c:out value="${person.city}"> </c:out></td>
         </tr>
     </c:forEach>
     </tbody>

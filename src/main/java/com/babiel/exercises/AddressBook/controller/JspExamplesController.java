@@ -13,18 +13,18 @@ import java.util.List;
  */
 @Controller
 public class JspExamplesController {
-  @RequestMapping("/jsp-examples")
-  public String greeting(Model model) {
-    List<String> stringList = new ArrayList<>();
-    stringList.add("one");
-    stringList.add("two");
-    stringList.add("three");
-    stringList.add("four");
-    stringList.add("five");
+    @RequestMapping("/jsp-examples")
+    public String greeting(Model model) {
+        List<String> stringList = new ArrayList<>();
+        stringList.add("one");
+        stringList.add("two");
+        stringList.add("three");
+        stringList.add("four");
+        stringList.add("five");
 
-    GreetingModel greeting = new GreetingModel("Max", "Mustermann");
-    model.addAttribute("greeting", greeting);
-    model.addAttribute("stringList", stringList);
-    return "jsp-examples";
-  }
+        GreetingModel greeting = new GreetingModel("Max", "Mustermann");
+        model.addAttribute("greeting", greeting);
+        model.addAttribute("stringList", stringList);
+        return "jsp-examples";
+    }
 }

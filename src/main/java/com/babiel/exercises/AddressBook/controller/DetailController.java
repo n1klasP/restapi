@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.support.SessionStatus;
 
 import javax.validation.Valid;
-import javax.validation.Validator;
 import java.util.Locale;
 
 
@@ -30,8 +29,7 @@ public class DetailController implements MessageSourceAware {
     @Autowired
     private PersonService personService;
 
-    private Integer userID;
-    private Validator validator;
+
     private static final Logger logger = LoggerFactory.getLogger(DetailController.class);
 
     private MessageSource messageSource;
@@ -44,7 +42,6 @@ public class DetailController implements MessageSourceAware {
 
     @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
     public String person(Model model, @PathVariable("id") Integer userID) {
-        this.userID = userID;
         System.out.println("ID is " + userID);
         model.addAttribute("person", personService.findAll().get(userID));
         return "detail";

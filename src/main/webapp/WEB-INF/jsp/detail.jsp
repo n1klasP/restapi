@@ -10,24 +10,24 @@
 <body>
 <form:form modelAttribute="person" method="post">
     <div class="form-group">
-        <label><spring:message code="firstName" /></label> <form:input path="firstName" />
+        <label><spring:message code="firstName"/></label> <form:input path="firstName"/>
         <form:errors path="firstName" cssClass="error"/>
     </div>
 
     <div class="form-group">
-        <label><spring:message code="lastName" /></label> <form:input path="lastName" />
+        <label><spring:message code="lastName"/></label> <form:input path="lastName"/>
     </div>
 
     <div class="form-group">
-        <label><spring:message code="street"/></label> <form:input path="street" />
+        <label><spring:message code="street"/></label> <form:input path="street"/>
     </div>
 
     <div class="form-group">
-        <label><spring:message code="zipCode"/></label> <form:input path="zipCode" />
+        <label><spring:message code="zipCode"/></label> <form:input path="zipCode"/>
     </div>
 
     <div class="form-group">
-        <label><spring:message code="city"/></label> <form:input path="city" />
+        <label><spring:message code="city"/></label> <form:input path="city"/>
     </div>
 
     <div class="form-group">

@@ -1,0 +1,140 @@
+Index: src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.model;\r\n\r\nimport com.babiel.exercises.AddressBook.controller.Firstname;\r\nimport org.springframework.data.mongodb.core.mapping.Document;\r\n\r\nimport javax.validation.constraints.Min;\r\nimport javax.validation.constraints.NotEmpty;\r\n\r\n/**\r\n * Created by p.okraku on 31.05.2019.\r\n */\r\n@Document(collection = \"person\")\r\npublic class PersonModel {\r\n\r\n    private long id2;\r\n\r\n    @Firstname(message = \"{test}\")\r\n    private String firstName;\r\n\r\n    @NotEmpty(message = \"leer\")\r\n    private String lastName;\r\n\r\n    @NotEmpty(message = \"leer\")\r\n    private String street;\r\n\r\n    @Min(value = 1, message = \"leer\")\r\n    private int zipCode;\r\n\r\n    @NotEmpty(message = \"leer\")\r\n    private String city;\r\n\r\n\r\n    public PersonModel() {\r\n    }\r\n\r\n    public PersonModel(long id, String firstName, String lastName, String street, int zipCode, String city) {\r\n        this.id2 = id;\r\n        this.firstName = firstName;\r\n        this.lastName = lastName;\r\n        this.street = street;\r\n        this.zipCode = zipCode;\r\n        this.city = city;\r\n    }\r\n\r\n    public long getId() {\r\n        return id2;\r\n    }\r\n\r\n    public void setId(long id) {\r\n        this.id2 = id;\r\n    }\r\n\r\n    public String getFirstName() {\r\n        return firstName;\r\n    }\r\n\r\n    public void setFirstName(String firstName) {\r\n        this.firstName = firstName;\r\n    }\r\n\r\n    public String getLastName() {\r\n        return lastName;\r\n    }\r\n\r\n    public void setLastName(String lastName) {\r\n        this.lastName = lastName;\r\n    }\r\n\r\n    public String getStreet() {\r\n        return street;\r\n    }\r\n\r\n    public void setStreet(String street) {\r\n        this.street = street;\r\n    }\r\n\r\n    public int getZipCode() {\r\n        return zipCode;\r\n    }\r\n\r\n    public void setZipCode(int zipCode) {\r\n        this.zipCode = zipCode;\r\n    }\r\n\r\n    public String getCity() {\r\n        return city;\r\n    }\r\n\r\n    public void setCity(String city) {\r\n        this.city = city;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java b/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java	
+@@ -29,7 +29,6 @@
+     @NotEmpty(message = "leer")
+     private String city;
+ 
+-
+     public PersonModel() {
+     }
+ 
+Index: src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.controller;\r\n\r\nimport com.babiel.exercises.AddressBook.model.PersonModel;\r\nimport com.babiel.exercises.AddressBook.services.PersonService;\r\nimport org.slf4j.Logger;\r\nimport org.slf4j.LoggerFactory;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\nimport org.springframework.context.MessageSource;\r\nimport org.springframework.context.MessageSourceAware;\r\nimport org.springframework.stereotype.Controller;\r\nimport org.springframework.ui.Model;\r\nimport org.springframework.validation.BindingResult;\r\nimport org.springframework.web.bind.annotation.PathVariable;\r\nimport org.springframework.web.bind.annotation.RequestMapping;\r\nimport org.springframework.web.bind.annotation.RequestMethod;\r\nimport org.springframework.web.bind.support.SessionStatus;\r\n\r\nimport javax.validation.Valid;\r\nimport javax.validation.Validator;\r\nimport java.util.Locale;\r\n\r\n\r\n@Controller\r\npublic class DetailController implements MessageSourceAware {\r\n\r\n    @Autowired\r\n    private PersonService personService;\r\n\r\n    private Integer userID;\r\n    private Validator validator;\r\n    private static final Logger logger = LoggerFactory.getLogger(DetailController.class);\r\n\r\n    private MessageSource messageSource;\r\n\r\n    @Override\r\n    public void setMessageSource(MessageSource messageSource) {\r\n        this.messageSource = messageSource;\r\n    }\r\n\r\n\r\n    @RequestMapping(value = \"/person/{id}\", method = RequestMethod.GET)\r\n    public String person(Model model, @PathVariable(\"id\") Integer userID) {\r\n        this.userID = userID;\r\n        System.out.println(\"ID is \" + userID);\r\n        model.addAttribute(\"person\", personService.findAll().get(userID));\r\n        return \"detail\";\r\n    }\r\n\r\n\r\n    @RequestMapping(value = \"/person/{id}\", method = RequestMethod.POST)\r\n    public String saveDetails(SessionStatus sessionStatus, @PathVariable(\"id\") Integer userID,\r\n                              Model model, @Valid PersonModel person, BindingResult bindingResult, Locale locale\r\n    ) {\r\n\r\n        if (bindingResult.hasErrors()) {\r\n            logger.error(messageSource.getMessage(\"error_form\", null, locale));\r\n            model.addAttribute(\"msg\", \"Added\");\r\n            model.addAttribute(\"person\", person);\r\n            return \"detail\";\r\n\r\n        }\r\n        model.addAttribute(\"msg\", \"Added\");\r\n        model.addAttribute(\"person\", person);\r\n\r\n        sessionStatus.setComplete();\r\n        personService.update(person);\r\n        return \"redirect:/\";\r\n    }\r\n\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java	
+@@ -26,8 +26,6 @@
+     @Autowired
+     private PersonService personService;
+ 
+-    private Integer userID;
+-    private Validator validator;
+     private static final Logger logger = LoggerFactory.getLogger(DetailController.class);
+ 
+     private MessageSource messageSource;
+@@ -37,16 +35,13 @@
+         this.messageSource = messageSource;
+     }
+ 
+-
+     @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
+     public String person(Model model, @PathVariable("id") Integer userID) {
+-        this.userID = userID;
+         System.out.println("ID is " + userID);
+         model.addAttribute("person", personService.findAll().get(userID));
+         return "detail";
+     }
+ 
+-
+     @RequestMapping(value = "/person/{id}", method = RequestMethod.POST)
+     public String saveDetails(SessionStatus sessionStatus, @PathVariable("id") Integer userID,
+                               Model model, @Valid PersonModel person, BindingResult bindingResult, Locale locale
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n        <option value=\"Interface\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"AZUBI-518\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/GreetingModel.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/resources/application.properties\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/PersonsController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/JspExamplesController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/firstNameConstraintValidator.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/pom.xml\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/Firstname.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"JPA Inspector\" value=\"true\" />\r\n        <entry key=\"JPA Palette\" value=\"true\" />\r\n        <entry key=\"JPA Structure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"JPA Inspector\" value=\"false\" />\r\n        <entry key=\"JPA Palette\" value=\"false\" />\r\n        <entry key=\"JPA Structure\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1xaDhUEkHn4q35p2qEPO66rJsZg\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateClassDialog.RecentsKey\">\r\n      <recent name=\"com.babiel.exercises.AddressBook.controller\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.SpringBootWebApplication\">\r\n    <configuration name=\"generated-requests#2\" type=\"HttpClient.HttpRequestRunConfigurationType\" factoryName=\"HTTP Request\" temporary=\"true\" path=\"$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http\" index=\"2\" runType=\"Run single request\">\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"SpringBootWebApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"AddressBook\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.babiel.exercises.AddressBook.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.babiel.exercises.AddressBook.SpringBootWebApplication\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Spring Boot.SpringBootWebApplication\" />\r\n        <item itemvalue=\"HTTP Request.generated-requests#2\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6\" name=\"Changes\" comment=\"\" />\r\n      <created>1630584428366</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1630584428366</updated>\r\n      <workItem from=\"1630584434961\" duration=\"8311000\" />\r\n      <workItem from=\"1630656132360\" duration=\"6745000\" />\r\n      <workItem from=\"1631084480655\" duration=\"19889000\" />\r\n      <workItem from=\"1631208524253\" duration=\"2568000\" />\r\n      <workItem from=\"1631261631558\" duration=\"7416000\" />\r\n      <workItem from=\"1631280213370\" duration=\"1598000\" />\r\n      <workItem from=\"1631515056136\" duration=\"12388000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <pin-to-top-manager>\r\n      <pinned-members>\r\n        <PinnedItemInfo parentTag=\"com.babiel.exercises.AddressBook.model.PersonModel\" memberName=\"id\" />\r\n        <PinnedItemInfo parentTag=\"org.springframework.validation.BeanPropertyBindingResult\" memberName=\"errors\" />\r\n        <PinnedItemInfo parentTag=\"org.springframework.aop.framework.ProxyFactory\" memberName=\"aopProxyFactory\" />\r\n      </pinned-members>\r\n    </pin-to-top-manager>\r\n    <watches-manager>\r\n      <configuration name=\"SpringBootApplicationConfigurationType\">\r\n        <watch expression=\"this.userID\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,7 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/model/PersonModel.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/PersonService.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -122,7 +128,7 @@
+       <workItem from="1631208524253" duration="2568000" />
+       <workItem from="1631261631558" duration="7416000" />
+       <workItem from="1631280213370" duration="1598000" />
+-      <workItem from="1631515056136" duration="12388000" />
++      <workItem from="1631515056136" duration="13206000" />
+     </task>
+     <servers />
+   </component>
+Index: src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook;\r\n\r\nimport com.babiel.exercises.AddressBook.persistence.DataSource;\r\nimport com.babiel.exercises.AddressBook.persistence.impl.DummyDataSource;\r\nimport com.babiel.exercises.AddressBook.persistence.impl.mongoDataSource;\r\nimport org.springframework.context.annotation.Bean;\r\nimport org.springframework.context.annotation.Configuration;\r\nimport org.springframework.web.servlet.LocaleResolver;\r\nimport org.springframework.web.servlet.config.annotation.InterceptorRegistry;\r\nimport org.springframework.web.servlet.i18n.LocaleChangeInterceptor;\r\nimport org.springframework.web.servlet.i18n.SessionLocaleResolver;\r\n\r\nimport java.util.Locale;\r\n\r\n/**\r\n * Created by p.okraku on 01.07.2019.\r\n */\r\n@Configuration\r\npublic class WebApplicationConfig {\r\n\r\n    @Bean\r\n    public DataSource addressBookDataSource() {\r\n        return new mongoDataSource();\r\n    }\r\n\r\n    public void addInterceptors(InterceptorRegistry registry) {\r\n        registry.addInterceptor(localeChangeInterceptor());\r\n    }\r\n\r\n\r\n    @Bean\r\n    public LocaleResolver localeResolver() {\r\n        SessionLocaleResolver slr = new SessionLocaleResolver();\r\n        slr.setDefaultLocale(Locale.GERMAN);\r\n        return slr;\r\n    }\r\n\r\n    @Bean\r\n    public LocaleChangeInterceptor localeChangeInterceptor() {\r\n        LocaleChangeInterceptor lci = new LocaleChangeInterceptor();\r\n        lci.setParamName(\"lang\");\r\n        return lci;\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java b/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java	
+@@ -23,11 +23,6 @@
+         return new mongoDataSource();
+     }
+ 
+-    public void addInterceptors(InterceptorRegistry registry) {
+-        registry.addInterceptor(localeChangeInterceptor());
+-    }
+-
+-
+     @Bean
+     public LocaleResolver localeResolver() {
+         SessionLocaleResolver slr = new SessionLocaleResolver();
+Index: src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.persistence.impl;\r\n\r\nimport com.babiel.exercises.AddressBook.model.PersonModel;\r\nimport com.babiel.exercises.AddressBook.persistence.DataSource;\r\nimport com.babiel.exercises.AddressBook.repository.PersonModelMongoRepository;\r\nimport org.springframework.beans.factory.annotation.Autowired;\r\n\r\nimport javax.annotation.PostConstruct;\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\npublic class mongoDataSource implements DataSource {\r\n\r\n\r\n    List<PersonModel> persons = new ArrayList<>();\r\n\r\n    @Autowired\r\n    private PersonModelMongoRepository pmm;\r\n\r\n    @PostConstruct\r\n    public void init() {\r\n        List<PersonModel> personGet = pmm.findAll();\r\n        for (PersonModel pm : personGet) {\r\n            persons.add(pm);\r\n            System.out.println(pm);\r\n        }\r\n\r\n    }\r\n\r\n    @Override\r\n    public List<PersonModel> findAll() {\r\n        return persons;\r\n    }\r\n\r\n    @Override\r\n    public void update(PersonModel updatedPerson) {\r\n        for (int i = 0; i < persons.size(); i++) {\r\n            if (persons.get(i).getId() == updatedPerson.getId()) {\r\n                persons.set(i, updatedPerson);\r\n                for (int j = 0; j < persons.size(); j++) {\r\n                    pmm.deleteAll();\r\n                }\r\n                pmm.saveAll(persons);\r\n            }\r\n        }\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java b/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/mongoDataSource.java	
+@@ -11,7 +11,6 @@
+ 
+ public class mongoDataSource implements DataSource {
+ 
+-
+     List<PersonModel> persons = new ArrayList<>();
+ 
+     @Autowired
+Index: src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.babiel.exercises.AddressBook.repository;\r\n\r\nimport com.babiel.exercises.AddressBook.model.PersonModel;\r\nimport org.springframework.data.mongodb.repository.MongoRepository;\r\nimport org.springframework.stereotype.Repository;\r\n\r\nimport java.util.List;\r\n\r\n@Repository\r\npublic interface PersonModelMongoRepository extends MongoRepository<PersonModel, Long> {\r\n\r\n    @Override\r\n    public List<PersonModel> findAll();\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java b/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java
+--- a/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java	
++++ b/src/main/java/com/babiel/exercises/AddressBook/repository/PersonModelMongoRepository.java	
+@@ -10,5 +10,5 @@
+ public interface PersonModelMongoRepository extends MongoRepository<PersonModel, Long> {
+ 
+     @Override
+-    public List<PersonModel> findAll();
++     List<PersonModel> findAll();
+ }
