@@ -26,10 +26,10 @@ public class jdbcDataSource implements DataSource {
         persons = jdbc.query(sql, (resultSet, i) -> {
             PersonModel personModel = new PersonModel();
             personModel.setId(resultSet.getLong("id"));
-            personModel.setFirstName(resultSet.getString("firstName"));
-            personModel.setLastName(resultSet.getString("lastName"));
+            personModel.setFirstName(resultSet.getString("first_Name"));
+            personModel.setLastName(resultSet.getString("last_Name"));
             personModel.setStreet(resultSet.getString("street"));
-            personModel.setZipCode(resultSet.getInt("zipCode"));
+            personModel.setZipCode(resultSet.getInt("zip_Code"));
             personModel.setCity(resultSet.getString("city"));
             return personModel;
         });

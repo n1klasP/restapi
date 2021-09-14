@@ -42,6 +42,8 @@ public class jpaDataSource implements DataSource {
                 break;
             }
         }
+        pmj.save(updatedPerson);
+        System.out.println("Neue Personhinzugefügt");
     }
 }
 

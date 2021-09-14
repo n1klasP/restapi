@@ -3,6 +3,7 @@ package com.babiel.exercises.AddressBook;
 import com.babiel.exercises.AddressBook.persistence.DataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.DummyDataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.jdbcDataSource;
+import com.babiel.exercises.AddressBook.persistence.impl.jpaDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
@@ -20,7 +21,7 @@ public class WebApplicationConfig {
 
     @Bean
     public DataSource addressBookDataSource() {
-        return new jdbcDataSource();
+        return new jpaDataSource();
     }
 
     public void addInterceptors(InterceptorRegistry registry) {

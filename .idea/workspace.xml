@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/DetailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/PersonModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_09_2021_13_37__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44_[Changes]1/DetailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44_[Changes]1/PersonModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_09_2021_10_44__Changes_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34_[Changes]/DetailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AddressBook.iml" beforeDir="false" afterPath="$PROJECT_DIR$/AddressBook.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +134,8 @@
       <workItem from="1631208524253" duration="2568000" />
       <workItem from="1631261631558" duration="7416000" />
       <workItem from="1631548971835" duration="287000" />
+      <workItem from="1631601319189" duration="2748000" />
+      <workItem from="1631618596236" duration="7698000" />
     </task>
     <servers />
   </component>
@@ -143,29 +146,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="com.babiel.exercises.AddressBook.services.impl.PersonServiceImpl" memberName="addressBookDataSource" />
         <PinnedItemInfo parentTag="com.babiel.exercises.AddressBook.model.PersonModel" memberName="id" />
         <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="errors" />
         <PinnedItemInfo parentTag="org.springframework.aop.framework.ProxyFactory" memberName="aopProxyFactory" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="SpringBootApplicationConfigurationType">
-        <watch expression="this.userID" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

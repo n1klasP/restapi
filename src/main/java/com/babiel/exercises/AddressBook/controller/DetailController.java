@@ -5,7 +5,6 @@ import com.babiel.exercises.AddressBook.repository.PersonModelJpaRepository;
 import com.babiel.exercises.AddressBook.services.PersonService;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Safelist;
-import org.jsoup.safety.Whitelist;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +26,7 @@ import java.util.Locale;
 public class DetailController implements MessageSourceAware {
 
     @Autowired
-    private PersonModelJpaRepository personModelRepository;
-
-    @Autowired
     private PersonService personService;
-
 
     private static final Logger logger = LoggerFactory.getLogger(DetailController.class);
 
@@ -42,7 +37,6 @@ public class DetailController implements MessageSourceAware {
         this.messageSource = messageSource;
     }
 
-
     @RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
     public String person(Model model, @PathVariable("id") Integer userID) {
         System.out.println("ID is " + userID);
@@ -50,16 +44,14 @@ public class DetailController implements MessageSourceAware {
         return "detail";
     }
 
-
     @RequestMapping(value = "/person/{id}", method = RequestMethod.POST)
     public String saveDetails(SessionStatus sessionStatus, @PathVariable("id") Integer userID,
                               Model model, @Valid PersonModel person, BindingResult bindingResult, Locale locale
     ) {
-        //jsoup verifiziert die Strings aus dem PersonModel person und verarbeitet diese weiter zu einem neuen Personmodel.
-        String cleanedFirstName = Jsoup.clean(person.getFirstName(),Safelist.basic());
-        String cleanedLastName = Jsoup.clean(person.getLastName(),Safelist.basic());
-        String cleanedCity = Jsoup.clean(person.getCity(),Safelist.basic());
-        String cleanedStreet = Jsoup.clean(person.getStreet(),Safelist.basic());
+        String cleanedFirstName = Jsoup.clean(person.getFirstName(), Safelist.basic());
+        String cleanedLastName = Jsoup.clean(person.getLastName(), Safelist.basic());
+        String cleanedCity = Jsoup.clean(person.getCity(), Safelist.basic());
+        String cleanedStreet = Jsoup.clean(person.getStreet(), Safelist.basic());
         String cleanedZipCode = Jsoup.clean(String.valueOf(person.getZipCode()), Safelist.basic());
 
         PersonModel personClean = new PersonModel();
@@ -68,12 +60,8 @@ public class DetailController implements MessageSourceAware {
         personClean.setCity(cleanedCity);
         personClean.setStreet(cleanedStreet);
         personClean.setFirstName(cleanedFirstName);
+        personClean.setZipCode(Integer.parseInt(cleanedZipCode));
 
-
-
-
-
-        String safe = Jsoup.clean(person.toString(), Safelist.basic());
         if (bindingResult.hasErrors()) {
             logger.error(messageSource.getMessage("error_form", null, locale));
             model.addAttribute("msg", "Added");
