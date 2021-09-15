@@ -50,9 +50,9 @@ public class jpaDataSource implements DataSource {
     }
 
     @Override
-    public void delete(PersonModel personModel) {
-        persons.remove(personModel);
-        pmj.delete(personModel);
+    public void delete(Integer id) {
+        persons.get(id);
+        pmj.delete(persons.get(id));
     }
 }
 

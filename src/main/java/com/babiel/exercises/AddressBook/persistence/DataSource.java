@@ -2,6 +2,7 @@ package com.babiel.exercises.AddressBook.persistence;
 
 import com.babiel.exercises.AddressBook.model.PersonModel;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 
 /**
@@ -14,6 +15,6 @@ public interface DataSource {
 
     void add(PersonModel personModel);
 
-    void delete(PersonModel personModel);
+    void delete(Integer id);
 
 }

@@ -43,7 +43,7 @@ public class DummyDataSource implements DataSource {
     }
 
     @Override
-    public void delete(PersonModel personModel) {
+    public void delete(Integer id) {
 
     }
 }

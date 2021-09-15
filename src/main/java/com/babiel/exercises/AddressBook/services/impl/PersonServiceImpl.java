@@ -28,11 +28,11 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void add(PersonModel person) {
-        addressBookDataSource.update(person);
+        addressBookDataSource.add(person);
     }
 
     @Override
-    public void delete(PersonModel person) {
-        addressBookDataSource.delete(person);
+    public void delete(Integer id) {
+        addressBookDataSource.delete(id);
     }
 }
