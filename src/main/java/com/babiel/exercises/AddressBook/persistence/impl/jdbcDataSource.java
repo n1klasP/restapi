@@ -49,5 +49,15 @@ public class jdbcDataSource implements DataSource {
             }
         }
     }
+
+    @Override
+    public void add(PersonModel personModel) {
+
+    }
+
+    @Override
+    public void delete(PersonModel personModel) {
+
+    }
 }
 

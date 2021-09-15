@@ -7,4 +7,6 @@ import java.util.List;
 public interface PersonService {
     List<PersonModel> findAll();
     void update(PersonModel person);
+      void add(PersonModel person);
+      void delete(PersonModel person);
 }

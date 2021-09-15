@@ -12,4 +12,8 @@ public interface DataSource {
 
     void update(PersonModel updatedPerson);
 
+    void add(PersonModel personModel);
+
+    void delete(PersonModel personModel);
+
 }

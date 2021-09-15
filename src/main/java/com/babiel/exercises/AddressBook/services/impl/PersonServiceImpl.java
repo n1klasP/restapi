@@ -25,4 +25,14 @@ public class PersonServiceImpl implements PersonService {
     public void update(PersonModel person) {
         addressBookDataSource.update(person);
     }
+
+    @Override
+    public void add(PersonModel person) {
+        addressBookDataSource.update(person);
+    }
+
+    @Override
+    public void delete(PersonModel person) {
+        addressBookDataSource.delete(person);
+    }
 }

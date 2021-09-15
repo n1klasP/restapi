@@ -42,8 +42,17 @@ public class jpaDataSource implements DataSource {
                 break;
             }
         }
-        pmj.save(updatedPerson);
-        System.out.println("Neue Personhinzugefügt");
+    }
+
+    public void add(PersonModel personModel) {
+        pmj.save(personModel);
+        System.out.println("New User Added");
+    }
+
+    @Override
+    public void delete(PersonModel personModel) {
+        persons.remove(personModel);
+        pmj.delete(personModel);
     }
 }
 

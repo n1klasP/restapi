@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a630a6b5-a94d-44ed-93b5-ab15a2e7f5e6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34_[Changes]/DetailController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_07_09_2021_08_34__Changes_.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/exception/NotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/WebApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/DetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/DataSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/WebApplicationConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/impl/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/services/impl/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/RestAPIController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/controller/RestAPIController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/DataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/DataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/DummyDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jdbcDataSource.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/services/PersonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/services/PersonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/services/impl/PersonServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/babiel/exercises/AddressBook/services/impl/PersonServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +138,8 @@
       <workItem from="1631261631558" duration="7416000" />
       <workItem from="1631548971835" duration="287000" />
       <workItem from="1631601319189" duration="2748000" />
-      <workItem from="1631618596236" duration="7698000" />
+      <workItem from="1631618596236" duration="8276000" />
+      <workItem from="1631687277206" duration="4892000" />
     </task>
     <servers />
   </component>
@@ -146,9 +150,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/controller/RestAPIController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/babiel/exercises/AddressBook/persistence/impl/jpaDataSource.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
