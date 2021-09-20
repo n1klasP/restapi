@@ -4,13 +4,17 @@ import com.babiel.exercises.AddressBook.persistence.DataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.DummyDataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.jdbcDataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.jpaDataSource;
+import com.babiel.exercises.AddressBook.template.RestDemo;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
+import java.time.Duration;
 import java.util.Locale;
 
 /**
@@ -41,6 +45,14 @@ public class WebApplicationConfig {
         LocaleChangeInterceptor lci = new LocaleChangeInterceptor();
         lci.setParamName("lang");
         return lci;
+    }
+
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder
+                .setConnectTimeout(Duration.ofMillis(3000))
+                .setReadTimeout(Duration.ofMillis(3000))
+                .build();
     }
 
 
