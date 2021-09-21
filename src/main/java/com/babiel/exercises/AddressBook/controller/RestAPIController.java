@@ -40,9 +40,8 @@ public class RestAPIController {
 
     @RequestMapping(value = "/api/v1/person/{id}", method = RequestMethod.PUT)
     public HttpEntity saveDetails(@PathVariable("id") Integer userID, @RequestBody PersonModel personModel) {
-        personModel.setId(userID);
         personService.update(personModel);
-        return new ResponseEntity("User wurde erfolgreich bearbeitet" + personModel, HttpStatus.MULTI_STATUS);
+        return new ResponseEntity("User wurde erfolgreich bearbeitet",HttpStatus.MULTI_STATUS);
     }
 
     @RequestMapping(value = "/api/v1/person/{id}", method = RequestMethod.DELETE)

@@ -22,26 +22,32 @@ public class jpaDataSource implements DataSource {
     @PostConstruct
     public void init() {
         persons = new ArrayList<>();
-        List<PersonModel> personList = pmj.findAll();
-        for (PersonModel pm : personList) {
-            persons.add(pm);
+        List<PersonModel> test = pmj.findAll();
+        for (PersonModel p : test) {
+            persons.add(p);
+            System.out.println(p + "sss");
         }
     }
 
     @Override
     public List<PersonModel> findAll() {
+        persons = new ArrayList<>();
+        List<PersonModel> personList = pmj.findAll();
+        for (PersonModel pm : personList) {
+            persons.add(pm);
+        }
         return persons;
     }
 
     @Override
     public void update(PersonModel updatedPerson) {
-        for (int i = 0; i < persons.size(); i++) {
-            if (persons.get(i).getId() == updatedPerson.getId()) {
-                persons.set(i, updatedPerson);
-                pmj.save(updatedPerson);
-                break;
-            }
-        }
+        PersonModel personModel = pmj.getOne(updatedPerson.getId());
+        personModel.setFirstName(updatedPerson.getFirstName());
+        personModel.setLastName(updatedPerson.getLastName());
+        personModel.setZipCode(updatedPerson.getZipCode());
+        personModel.setStreet(updatedPerson.getStreet());
+        personModel.setCity(updatedPerson.getCity());
+        pmj.save(personModel);
     }
 
     public void add(PersonModel personModel) {
@@ -54,5 +60,6 @@ public class jpaDataSource implements DataSource {
         persons.get(id);
         pmj.delete(persons.get(id));
     }
+
 }
 

@@ -2,12 +2,10 @@ package com.babiel.exercises.AddressBook.model;
 
 import com.babiel.exercises.AddressBook.controller.Firstname;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 /**
  * Created by p.okraku on 31.05.2019.
@@ -17,7 +15,8 @@ import javax.validation.constraints.NotEmpty;
 public class PersonModel {
 
     @Id
-    @GeneratedValue
+    @SequenceGenerator(name = "personId", initialValue = 0)
+    @GeneratedValue(strategy= GenerationType.IDENTITY, generator = "personId")
     private long id;
 
     @Firstname(message = "{test}")
