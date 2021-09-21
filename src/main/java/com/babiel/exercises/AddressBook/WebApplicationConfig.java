@@ -1,10 +1,7 @@
 package com.babiel.exercises.AddressBook;
 
 import com.babiel.exercises.AddressBook.persistence.DataSource;
-import com.babiel.exercises.AddressBook.persistence.impl.DummyDataSource;
-import com.babiel.exercises.AddressBook.persistence.impl.jdbcDataSource;
 import com.babiel.exercises.AddressBook.persistence.impl.jpaDataSource;
-import com.babiel.exercises.AddressBook.template.RestDemo;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
